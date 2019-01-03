@@ -1,0 +1,56 @@
+#
+# Example file for working with classes
+#
+# classes are a good way to encapulate code and make it reusable and calling by other functions are areas of code.
+
+#in object oreintated programming we define functions defined in classes as methods. They belong to the class which has been defined
+# when defining a class, we use the class deifinition this will mean that we want to declare eveything indented beyond it 
+# as part of this object aka class. Class is the resevered word which is used and then followed by the class name.
+# within it we can define methods which are directly related to the class. These can be used when the class is used.
+# the methods are declared and used in the same way as normal function, its just they have a tight association to the class.
+
+
+class myClass()
+  #self is the eqv of the this keyword, we used this to gather the value of the class we are refering to. for instance if the class
+  # was a car, self would used so we can refer to other methods and the properties of the car, such as make model etc.
+  def method(self)
+    print(Method 1)
+  # if we look at the code we can see that the methods are overwritten when, a method name is reuseddefined in a child class
+  # however this overwrite is only when we call the class singularly, if we pass the instance through and call the class directly 
+  # we can still use the base method declerations.
+  # so if we use c2.method we are actually using anotherClass's method called the same name. However if we still wanted to use the
+  #base parent class method we can do myClass.method(self) within it, and it will pass the child instance to functions of the parent
+  def method2(self, someString)
+    print(my class, someString)
+
+class anotherClass(myClass)
+  #self is the eqv of the this keyword, we used this to gather the value of the class we are refering to. for instance if the class
+  # was a car, self would used so we can refer to other methods and the properties of the car, such as make model etc.
+  # this class inherits from another which is this case is my class. This is helpful when we have a singular base class
+  # which may be seen across different child classes. so if the parent class is property, then this has methods of buy, sell , let.
+  # teh child class could be apartment, house, warehouse etc. which may have alternative methods or properties 
+  def method(self)
+    #now if we wanted to use the parent class we can so by calling the parent class and the methods from it
+    #we need to make sure that we pass through self as an argument, as this is the instance we wish to use
+    myClass.method(self)
+    print(Another Class Method 1)
+
+  def method2(self, someString)
+    print(Another class Method 2, someString)
+
+
+def main()
+  # so here we have used c to initiate and start the first instance of the class
+  # once we have done this we can then start to class the methods within it and use them as needed.
+  # we dont need to pass a method for self, as this is the instance of the class its self, but we 
+  # do for other arguments pass such as someString in method 2.
+  c = myClass()
+  c.method()
+  c.method2(Dog)
+
+  c2 = anotherClass()
+  c2.method()
+  c2.method2(Sandwhich)
+  
+if __name__ == __main__
+  main()

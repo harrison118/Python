@@ -1,0 +1,70 @@
+#
+# Example file for working with loops
+#
+
+def main():
+  x = 0
+
+  # define a while loop
+  # 
+  print("While Loop:")
+  while(x<5):
+    print(x)
+    x = x + 1
+  
+  print("For Loop Numbers:")
+  x = 0
+  # define a for loop
+  #for loops work in slight different ways to other languages.
+  #other languages we may expect to see a for loop as for(var x=0;x<10;x++)
+  # in python the for loop is what is called iterators, what this means, is if i want x to loop 
+  # over a range of numbers,i place these as parameters after the value range. So here it means that the value 
+  # of the loop being x, will go from 5 up to 9. it goes up to 9 as 10 wouldnt be in range it will be equal too
+  # x iterates by 1 each time.
+  for x in range(5,10):
+    print (x)
+
+  # use a for loop over a collection
+  print("For Loop Things:")
+    #here we have created an array which contains days of the week
+    #we can now iterate through this in a manner which is more like foreach loop rather than 
+    #a traditional for loop
+  days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+  # here we will see that d is assigned the value of monday, tuesday, wednesday etc iteratively
+  for d in days:
+    print(d)
+ 
+  # use the break and continue statements
+  # we may decide that we only want values to be printed or cetain code only to be executed when 
+  # a value is met, or for code to be skipped in such occasions 
+  # for this we can use break and continue.
+  print("Conditional Execution For Loop:")
+  for x in range(5,10):
+    if (x ==7):
+      break 
+      #The break will cause the current line of code to be discontinued in this case this is a for loop, within nested for loops
+      # it will be the most immediate one. In this instnace as soon as the value of x reaches 7 it will come out of the for loop
+
+      #there are other versions of the ability to skip code, there is also continue. This will allow you to skips this iteration
+      #but continue to use the loop
+      #in this instance if the value of x is 5 then skip the rest of the code, in this case this would be the printing of the value
+      #for x. This can be used in order to make code more efficient and stop the use of uneeded code execution 
+    if(x == 5):
+      continue
+    print(x)
+
+# to work out if a value is odd or even we can use x%2, this means that the remainder from a value being divided by 2. if there is a remiander
+#ie .5 then it is odd, if the remiander is none. then it is even.
+
+  #using the enumerate() function to get index 
+  # though as standard decleration you might not expect to see a loop counter like you would in other lanagues such 
+  # as Java, you can request one so to speak.
+  # here we use the function enumerate this will work like a normal loop but is able to return more than the one value 
+  # we usually see. This will return the value of the indexed position, aswell as the value itself 
+  days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+  # here we will see that d is assigned the value of monday, tuesday, wednesday etc iteratively
+  for i,d in enumerate(days):
+    print("We are in position: ", i, ", With the value: ",d)
+
+if __name__ == "__main__":
+  main()

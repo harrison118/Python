@@ -1,0 +1,132 @@
+#
+# Example file for working with functions
+#
+
+# define a basic function
+# Here we can see the defintion of the function, by name, the paramaters which could be passed
+# scope is defined by the colon and the indentation 
+def Function1():
+    print("Function 1")
+
+#Here we can see the use of the function. The result of this would be 
+# >> Function 1
+# >> Function 1
+# >> None
+#The reason is when the function is executed the objective is to print "function 1". However it doesnt return a value
+# There fore we see it print the value of a string twice, but doesnt give a string output for print(function1()) as no value is returned
+# There fore there is nothing to print, no value is passed back. There fore python gives the string representation of this 
+# which is none
+Function1()
+print(Function1())
+
+# function that takes arguments
+# Execute Function 2 Outputs:
+# >> 2
+# >> 3
+# >> None
+# Here we see a similiar occurance to the above. Though this time given arguments and have to pass values, in order for the 
+# function not to fail. Its process is still the same it will print a value during the execution. As instructed by will not
+# print a returned value from the value, as the function returns no value.
+print("Execute Function 2")
+def Function2(arg1, arg2):
+    print(arg1*arg2)
+Function2(1,2)
+print(Function2(1,3))
+
+
+# function that returns a value
+## Output 
+# >> None GIVEN
+# >> 4
+# what we see in this instance is that when we run function3 alone, it returns nothing to the display.
+# This is because though we return a value of 4, we dont given any further instruction on what to do with it.
+# The second attempt we seen the returned value used this is beacuse we given instructions that we want the 
+# value returned by the function to be printed
+
+print("Execute Function 3")
+def Function3(arg1):
+    return arg1*arg1
+Function3(1)
+print(Function3(2))
+
+
+
+# function with default value for an argument
+# Execute Function 4 with both arguments
+# >> Execute Function 4 pass both arguments
+# >> 1 4
+# >> 1 4
+# >> (1, 4)
+#output with only one argument passed back
+# >>Execute Function 4 Assume Default
+# >> 1 1
+# >> 1 1
+# >> (1, 1)
+
+#This function works by taking values as an argument, here we can see that arg1 is required, this is so because it has no
+# default value, this means that it has no value which it automatically assumes if no arguments are given to the function.
+# X as an argument on the other hand will assume the value of 1, if no other value is given. This means we can simply pass 
+#one argument back here and the program will still execute as the second argument, will take the value given of 1.
+# Weve seen in output two x defaults to 1, where a value is given x takes the value of 4
+print("Execute Function 4")
+def Function4(arg1, x = 1 ):
+    print(arg1, x)
+  #  return(arg1, x)
+    return arg1, x
+
+print("Execute Function 4 pass both arguments")
+Function4(1,4)
+print(Function4(1,4))
+
+print("Execute Function 4 Assume Default")
+Function4(1)
+print(Function4(1))
+
+#There maybe some cases where you wish to call functions in different orders. ie you may want to define x first. This can be done
+# by using the following. It is done by suppling the argument name with the value
+print("Execute Function Selective Argument Assignment")
+Function4(x = 3, arg1 = 4)
+print(Function4(arg1 = 4, x = 1))
+#The out put 
+# >> Execute Function Selective Argument Assignment
+# >> 4 3
+# >> 4 1
+# >>(4, 1)
+
+
+#function with variable number of arguments
+# This instance is the passing of multiple values, into a single argument.
+# Function 5 Output
+# >> Execute Function 5 Multiple Values, passed as one Argument
+# >> 17
+#What this does is it takes the values which are passed, it then turns them into an array. We are then able to use 
+# this as a common array which we can iterate through 
+def Function5(*ArrayArgs):
+    result = 0
+    for x in ArrayArgs:
+        result = result + x 
+    return result
+print("Execute Function 5 Multiple Values, passed as one Argument")
+print(Function5(4, 1, 12))
+
+# Output Function 5_1
+# >> Execute Function 5_1 Multiple Values and Multiple types, passed as one Argument
+# >> 41Dog
+def Function5_1(*ArrayArgs):
+    result = ""
+    for x in ArrayArgs:
+         result = result + str(x)
+    return result
+print("Execute Function 5_1 Multiple Values and Multiple types, passed as one Argument")
+print(Function5_1(4, 1,"Dog"))
+
+# Output Function 5_2
+# For this to work as intended the additional arguments passed should be placed after the varaible array 
+# >> Execute Function 5_2 Multiple Values and Multiple types, passed as one Argument
+# >> Cant went over the hill41Dog
+def Function5_2(*ArrayArgs, arg1):
+    for x in ArrayArgs:
+         arg1 = arg1 + str(x)
+    return arg1
+print("Execute Function 5_2 Multiple Values and Multiple types, passed as one Argument")
+print(Function5_2(4, 1,"Dog" , arg1 = "Cant went over the hill"))

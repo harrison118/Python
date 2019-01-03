@@ -1,0 +1,35 @@
+#
+# Example file for working with conditional statements
+#
+
+def main():
+  x, y = 110, 100
+  
+  # conditional flow uses if, elif, else  
+  if (x < y):
+    # This code is the comparison of x with y, we are looking to return 
+    # true in instances where x is a smaller value than y,
+    # if this is false then the indented code will not be executed
+    st = "x is less than y"
+    # print("Answer : ", st )
+    #now we may want within the conditional bounds to be the assigment
+    #meaning we always want st to be printed but the value given
+    #and therefore the value printed should change
+    #we can use an if else statement which will allow us to change st
+    #then outside the if statment we print st
+  elif(x > y):
+    st = "x is more than y"
+  else:
+    st = "x is equal to y"
+  print("Answer : ", st)
+  # conditional statements let you use "a if C else b"
+  #below is the tunary equv 
+  st = "x is less than y" if (x<y) else "x is greater than or equal to"
+  print("Answer 2: ", st)
+#python makes use of if statements, it doesnt make use of switch conditions
+
+#python allows for singular condition statement, this is similiar to tunary
+# it is show above
+
+if __name__ == "__main__":
+  main()

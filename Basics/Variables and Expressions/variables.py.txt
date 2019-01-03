@@ -1,0 +1,49 @@
+# 
+# Example file for variables
+#
+# The varibles are delared without any previous intention. This means you dont have to define it as string, int by use of a reserved 
+# word. Once the variable is defined it can be used and altered multiple times with no issue. The variable is not type cast to
+# a single data type. Making it easier to transfer f from int to string with no issues. 
+
+# Declare a variable and initialize it
+f = 0
+print(f)
+
+# # re-declaring the variable works
+f = "Abc"
+print(f)
+
+# # ERROR: variables of different types cannot be combined
+#The below would cause an issue as the program will assume the intentions of trying to literally add a string and int value together
+# then print the result to the user.
+# print("This is a string" + 234)
+# The sevon attempt produces a different result, as we have proved that the attempt is not to add the values, but to show them 
+# together, python will accpet the comma as a means of doing this. The above is a type error. 
+print("This is a string" , 234)
+# The reason the issue occured is that python is a strongly typed language. This means that though you dont declare the type of 
+# a varible yourself, or do not give knowledge of this. You are actually doing so through initilaisation i.e. declaring a value against 
+# it. We can only add two seperating typed values by altering the data type of one. Therefore the following would be a solution to 
+# add the values together. This makes the equation string plus string.
+f = "This is " + str(12)
+print(f)
+
+# Global vs. local variables in functions
+#   Now that which is defined within the function, is the reclaiming of the value f. This means f is a different instance when global
+# or local. Meaning all defined variable in the function are their own instance of the varibale f, and will hold a different memory store
+# to the global deifnition of f. Though their use will be limited to function, and where the value is passed to another function
+
+#There may be some instances where we want to alter the value of a global varibable. to do this we need to state that the variable we with to 
+# is the global version. we use gloabl {variable_name}. This will not only define it within the function as its new value 
+# but also globally 
+def someFunction():
+  #as the below states that f is global, this assignment is global also. When it is commented out or non 
+  #existent f is local initliasation of memory.
+  #global f
+  f = "def"
+  print (f)
+
+someFunction()
+print (f) 
+
+#del is a delete a function, This will remove the definition of a value
+
